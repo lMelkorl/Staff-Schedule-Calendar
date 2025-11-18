@@ -1,4 +1,4 @@
-@import './variables';
+@use './variables' as *;
 
 .event {
   padding: $spacing-sm $spacing-md;
@@ -132,7 +132,7 @@
 .highlighted-date-orange {
   background-color: rgba(252, 199, 41, 0.15) !important;
   font-weight: $font-weight-semibold;
-  color: darken($color-warning, 10%) !important;
+  color: #d4a017 !important;
 }
 
 .highlighted-pair {

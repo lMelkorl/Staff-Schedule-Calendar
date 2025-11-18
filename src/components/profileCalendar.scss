@@ -1,11 +1,10 @@
-// Modern SCSS Module System - @use ile değişkenler, @import ile stiller
 @use './styles' as *;
-@import './styles/profile';
-@import './styles/calendar-header';
-@import './styles/staff-list';
-@import './styles/calendar-grid';
-@import './styles/events';
-@import './styles/modal';
+@use './styles/profile';
+@use './styles/calendar-header';
+@use './styles/staff-list';
+@use './styles/calendar-grid';
+@use './styles/events';
+@use './styles/modal';
 
 // Clean Container Design - Full Natural Scroll
 .profile-calendar-container {

@@ -1,4 +1,4 @@
-@import './variables';
+@use './variables' as *;
 
 .modal-overlay {
   position: fixed;
@@ -201,6 +201,6 @@
   span {
     font-size: $font-size-sm;
     font-weight: $font-weight-semibold;
-    color: darken($color-warning, 15%);
+    color: #c9950a;
   }
 }

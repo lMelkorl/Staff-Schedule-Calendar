@@ -3,6 +3,9 @@
 ## Proje Özeti
 React 18 + TypeScript + Redux ile geliştirilmiş, personel vardiya yönetim sistemi. FullCalendar kütüphanesi kullanılarak modern ve kullanıcı dostu bir arayüz oluşturuldu.
 
+## Demo
+https://staff-schedule-calendar.netlify.app/
+
 ## Tamamlanan Görevler
 
 ### 1. SCSS Modernizasyonu ve Design System

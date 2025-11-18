@@ -7,7 +7,6 @@ type ProfileCardProps = {
 };
 
 const ProfileCard = ({ profile }: ProfileCardProps) => {
-  // Fix: getRoles returns object/number, handle properly
   const getRoleDisplay = () => {
     if (profile?.role?.name) {
       return profile.role.name;
@@ -18,6 +17,11 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
     }
     return typeof storedRole === 'string' ? storedRole : 'Admin';
   };
+
+  const handleLogout = () => {
+    AuthSession.remove();
+    window.location.href = '/';
+  };
   
   return (
     <div className="profile-section">
@@ -26,7 +30,12 @@ const ProfileCard = ({ profile }: ProfileCardProps) => {
           <h2>Welcome, {profile?.name ?? AuthSession.getName() ?? "User"}</h2>
           <p className="profile-email">{profile?.email ?? AuthSession.getEmail() ?? ""}</p>
         </div>
-        <span className="profile-role">{getRoleDisplay()}</span>
+        <div className="profile-actions">
+          <span className="profile-role">{getRoleDisplay()}</span>
+          <button onClick={handleLogout} className="logout-button">
+            Logout
+          </button>
+        </div>
       </div>
     </div>
   );

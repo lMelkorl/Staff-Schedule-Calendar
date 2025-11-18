@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-import type { AxiosResponse } from 'axios';
 import type { Action } from 'redux-actions';
 
 import { put, takeEvery } from 'redux-saga/effects';

@@ -1,4 +1,4 @@
-@import './variables';
+@use './variables' as *;
 
 .profile-section {
   display: flex;
@@ -54,6 +54,12 @@
     }
   }
 
+  .profile-actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
   .profile-role {
     color: white;
     font-weight: $font-weight-bold;
@@ -68,6 +74,30 @@
     white-space: nowrap;
   }
 
+  .logout-button {
+    padding: $spacing-sm $spacing-lg;
+    background: white;
+    border: 2px solid $color-danger;
+    color: $color-danger;
+    border-radius: $radius-sm;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    transition: all $transition-base;
+    white-space: nowrap;
+
+    &:hover {
+      background: $color-danger;
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
@@ -75,6 +105,10 @@
     
     h2 {
       font-size: $font-size-lg;
+    }
+
+    .profile-actions {
+      flex-wrap: wrap;
     }
   }
 }
