@@ -1,0 +1,103 @@
+@import './variables';
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xl;
+  padding-bottom: $spacing-lg;
+  border-bottom: 1px solid $color-border;
+  position: relative;
+
+  h2 {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-lg;
+  }
+}
+
+.calendar-actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.add-schedule-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-lg;
+  background: $color-primary;
+  color: white;
+  border: none;
+  border-radius: $radius-sm;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  transition: all $transition-base;
+  box-shadow: 0 2px 6px rgba(25, 151, 156, 0.2);
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    background: $color-primary-dark;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(25, 151, 156, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.legend {
+  display: flex;
+  gap: $spacing-lg;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: $spacing-md;
+    width: 100%;
+  }
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+}
+
+.legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: $radius-sm;
+  flex-shrink: 0;
+  border: 1px solid $color-border;
+
+  &.highlighted-pair-demo {
+    border: 2px solid $color-primary;
+    background: transparent;
+  }
+}
+
+.legend-label {
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+}

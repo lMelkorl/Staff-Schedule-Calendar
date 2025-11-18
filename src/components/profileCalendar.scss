@@ -1,0 +1,158 @@
+// Modern SCSS Module System - @use ile değişkenler, @import ile stiller
+@use './styles' as *;
+@import './styles/profile';
+@import './styles/calendar-header';
+@import './styles/staff-list';
+@import './styles/calendar-grid';
+@import './styles/events';
+@import './styles/modal';
+
+// Clean Container Design - Full Natural Scroll
+.profile-calendar-container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+  padding: $spacing-xl $spacing-xl $spacing-3xl;
+  background-color: $color-bg-container;
+  min-height: 100%;
+  
+  @media (max-width: 768px) {
+    padding: $spacing-lg $spacing-lg $spacing-2xl;
+  }
+}
+
+.calendar-section {
+  background-color: $color-bg-primary;
+  padding: $spacing-lg;
+  border-radius: $radius-sm;
+  box-shadow: $shadow-md;
+  
+  @media (max-width: 768px) {
+    padding: $spacing-md;
+  }
+}
+
+.calendar-wrapper {
+  position: relative;
+  
+  // Force FullCalendar to not use fixed heights
+  .fc,
+  .fc * {
+    max-height: none !important;
+  }
+  
+  .fc-view-harness,
+  .fc-view-harness-active {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  
+  .fc-scroller,
+  .fc-scroller-liquid-absolute {
+    overflow: visible !important;
+    position: relative !important;
+  }
+}
+
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: $spacing-xl;
+
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top-color: $color-primary;
+    border-radius: $radius-full;
+    animation: spin 0.8s linear infinite;
+  }
+
+  p {
+    color: $color-text-secondary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.stats-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-sm;
+  }
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  background: $color-bg-secondary;
+  border-radius: $radius-sm;
+  border-left: 3px solid $color-primary;
+  transition: all $transition-fast;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: $shadow-sm;
+  }
+
+  .stat-icon {
+    font-size: 24px;
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+
+  .stat-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .stat-value {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: $font-weight-semibold;
+    color: $color-text-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 768px) {
+    padding: $spacing-sm;
+    gap: $spacing-sm;
+
+    .stat-icon {
+      font-size: 20px;
+    }
+
+    .stat-value {
+      font-size: $font-size-lg;
+    }
+  }
+}

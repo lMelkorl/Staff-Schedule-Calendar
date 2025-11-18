@@ -1,0 +1,80 @@
+@import './variables';
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-lg;
+  background: $color-bg-primary;
+  padding: $spacing-lg $spacing-xl;
+  border-radius: $radius-sm;
+  box-shadow: $shadow-md;
+  border-left: 4px solid $color-primary;
+
+  @media (max-width: 768px) {
+    padding: $spacing-md $spacing-lg;
+    flex-wrap: wrap;
+  }
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-2xl;
+  flex: 1;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: $font-size-xl;
+    color: $color-text-primary;
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.3px;
+  }
+
+  .profile-email {
+    color: $color-text-secondary;
+    margin: 0;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-normal;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    
+    &::before {
+      content: '✉';
+      font-size: $font-size-base;
+      opacity: 0.7;
+    }
+  }
+
+  .profile-role {
+    color: white;
+    font-weight: $font-weight-bold;
+    margin: 0;
+    font-size: $font-size-sm;
+    padding: $spacing-sm $spacing-xl;
+    background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 100%);
+    border-radius: $radius-pill;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px 8px rgba(25, 151, 156, 0.2);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-md;
+    
+    h2 {
+      font-size: $font-size-lg;
+    }
+  }
+}

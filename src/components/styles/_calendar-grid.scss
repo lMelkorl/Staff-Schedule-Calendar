@@ -1,0 +1,224 @@
+@import './variables';
+
+.fc {
+  .fc-scrollgrid {
+    border-color: transparent !important;
+  }
+
+  th, td {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid $color-border !important;
+  }
+
+  .fc-toolbar {
+    margin-bottom: $spacing-xl;
+    gap: $spacing-md;
+    
+    &.fc-header-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  .fc-toolbar-title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    letter-spacing: -0.3px;
+    margin: 0 $spacing-md;
+  }
+
+  .fc-toolbar-chunk {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+  }
+
+  .fc-button {
+    background: $color-bg-primary !important;
+    border: 1px solid $color-border !important;
+    color: $color-text-primary !important;
+    border-radius: $radius-sm !important;
+    padding: $spacing-sm $spacing-lg !important;
+    font-weight: $font-weight-medium !important;
+    font-size: $font-size-sm !important;
+    transition: all $transition-fast !important;
+    box-shadow: none !important;
+    text-transform: capitalize !important;
+    min-width: 36px !important;
+    opacity: 1 !important;
+
+    &:hover {
+      background: $color-bg-tertiary !important;
+      border-color: $color-border-medium !important;
+      color: $color-text-primary !important;
+      opacity: 1 !important;
+    }
+
+    &:active {
+      background: $color-bg-tertiary !important;
+      transform: translateY(0) !important;
+    }
+
+    &:disabled {
+      opacity: 1 !important;
+      cursor: pointer !important;
+      background: $color-bg-primary !important;
+      pointer-events: auto !important;
+    }
+
+    &:focus {
+      outline: none !important;
+      box-shadow: 0 0 0 2px $color-primary-lighter !important;
+    }
+  }
+
+  .fc-button-primary {
+    background: $color-bg-primary !important;
+    border: 1px solid $color-border !important;
+    color: $color-text-primary !important;
+    
+    &:not(:disabled):active,
+    &.fc-button-active {
+      background: $color-bg-primary !important;
+      border-color: $color-border !important;
+      color: $color-text-primary !important;
+      font-weight: $font-weight-medium !important;
+
+      &:hover {
+        background: $color-bg-tertiary !important;
+        border-color: $color-border-medium !important;
+        color: $color-text-primary !important;
+      }
+    }
+  }
+
+  .fc-button-group {
+    gap: $spacing-xs;
+    display: flex;
+  }
+
+  .fc-col-header-cell {
+    background: transparent;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    font-size: $font-size-xs;
+    letter-spacing: 1px;
+    padding: $spacing-lg $spacing-sm $spacing-md;
+    color: $color-text-secondary;
+    border-color: $color-border !important;
+  }
+
+  .fc-daygrid-day {
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: $color-bg-secondary;
+    }
+  }
+
+  .fc-daygrid-day-frame {
+    padding: $spacing-sm;
+    min-height: 70px;
+  }
+
+  .fc-daygrid-day-number {
+    font-weight: $font-weight-semibold;
+    padding: $spacing-sm;
+    color: $color-text-primary;
+    font-size: $font-size-base;
+  }
+
+  .fc-day-other {
+    background-color: $color-bg-secondary !important;
+    
+    .fc-daygrid-day-number {
+      color: $color-text-tertiary;
+      font-weight: $font-weight-normal;
+    }
+
+    &:hover {
+      background-color: $color-bg-tertiary !important;
+    }
+  }
+
+  .fc-daygrid-day-top {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .fc-day-today {
+    background-color: rgba(25, 151, 156, 0.05) !important;
+    position: relative;
+    
+    .fc-daygrid-day-bg {
+      display: none !important;
+    }
+    
+    .fc-daygrid-day-top {
+      z-index: 100;
+      position: relative;
+      background: transparent !important;
+    }
+    
+    .fc-daygrid-day-number {
+      background: $color-primary !important;
+      color: white !important;
+      border-radius: $radius-full !important;
+      font-weight: $font-weight-bold !important;
+      padding: 0 !important;
+      width: 36px !important;
+      height: 36px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: $font-size-lg !important;
+      box-shadow: 0 3px 10px rgba(25, 151, 156, 0.5), 0 0 0 2px white, 0 0 0 4px rgba(25, 151, 156, 0.2) !important;
+      transition: all $transition-base !important;
+      z-index: 100 !important;
+      position: relative !important;
+      line-height: 1 !important;
+      
+      &:hover {
+        transform: scale(1.08) !important;
+        box-shadow: 0 5px 15px rgba(25, 151, 156, 0.6), 0 0 0 2px white, 0 0 0 5px rgba(25, 151, 156, 0.3) !important;
+      }
+    }
+    
+    .fc-daygrid-day-events {
+      z-index: 1;
+      margin-top: $spacing-md;
+    }
+  }
+
+  .fc-daygrid-day-events {
+    margin-top: $spacing-sm;
+    min-height: 0;
+  }
+
+  .fc-daygrid-event-harness {
+    margin-bottom: $spacing-xs;
+  }
+
+  .fc-daygrid-more-link {
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    font-weight: $font-weight-semibold;
+    padding: 2px $spacing-sm;
+    border-radius: $radius-sm;
+    transition: all $transition-fast;
+    background: $color-bg-tertiary;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2px;
+
+    &:hover {
+      background: $color-primary-light;
+      color: $color-primary;
+    }
+  }
+}
