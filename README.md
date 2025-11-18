@@ -144,8 +144,5 @@ React 18 + TypeScript + Redux ile geliştirilmiş, personel vardiya yönetim sis
 
 Tüm geliştirmeler modern best practice'ler göz önünde bulundurularak yapıldı. Kod okunabilirliği, performans ve maintainability'ye önem verildi. TypeScript tip güvenliği sağlandı. SCSS modular yapı ile organize edildi.
 
-Proje production-ready durumda ve tüm requirements karşılanmıştır.
-
-
 
 
